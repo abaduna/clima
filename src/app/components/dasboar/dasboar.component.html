@@ -1,0 +1,22 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-4">
+            <img [src]="urlimg" alt="imgclima" style="width: 300px; " height="300px">
+        </div>
+        <div class="col-lg-6 mt-4">
+            <input class="form-control" [(ngModel)]="cuidad" placeholder="ingrese ciudad" type="text">
+            <button (click)="optenercLIMA()" [disabled]="cuidad ==  '' " class="btn btn-primary btn-block">optener clima</button>
+            
+            <span *ngIf="eror" class="badge text bg-danger text-center">Error</span>
+           
+          
+            <div class="card mt-3"  *ngIf="louding">
+                <div class="cardbody">
+                    <p> <b>temperatura: </b> {{temperatura}} </p>
+                    <p> <b>humedad: </b> {{humedad}} </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
